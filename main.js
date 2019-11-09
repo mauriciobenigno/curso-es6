@@ -45,9 +45,47 @@ function teste(x)
 }
 
 //teste(10);
-// OPERAÇÕES COM ARRAY
 
+//const arr = [1, 3, 4, 5, 8, 10];
 const arr = [1, 3, 4, 5, 8, 10];
+
+// ARROW FUNCTIONS
+
+const newArrf = arr.map((item) => {
+    return item * 2;
+});
+
+//console.log(newArrf);
+
+const newArrf2 = arr.map(item => {
+    return item * 2;
+});
+
+//console.log(newArrf2);
+
+const newArrf3 = arr.map(item => item * 2);
+
+//console.log(newArrf3);
+
+const testeF = () => {
+    return 'teste'; // retorna uma string
+};
+
+//console.log(testeF());
+
+const testeF2 = () => [1,2,3]; // retorna array
+
+//console.log(testeF2());
+
+const testeF3 = () => 3; // retorna valor
+
+//console.log(testeF3());
+
+const testeF4 = () => ({ nome: 'Mauricio'}); // retorna objeto
+
+//console.log(testeF4());
+
+// OPERAÇÕES COM ARRAY
 
 const newArr = arr.map(function(item){
     return item*2;
@@ -72,3 +110,4 @@ const find = arr.find(function(item){
 });
 
 //console.log(find);
+

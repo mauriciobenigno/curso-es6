@@ -78,10 +78,49 @@ function teste(x) {
     console.log(x, _y);
   }
 } //teste(10);
+//const arr = [1, 3, 4, 5, 8, 10];
+
+
+var arr = [1, 3, 4, 5, 8, 10]; // ARROW FUNCTIONS
+
+var newArrf = arr.map(function (item) {
+  return item * 2;
+}); //console.log(newArrf);
+
+var newArrf2 = arr.map(function (item) {
+  return item * 2;
+}); //console.log(newArrf2);
+
+var newArrf3 = arr.map(function (item) {
+  return item * 2;
+}); //console.log(newArrf3);
+
+var testeF = function testeF() {
+  return 'teste'; // retorna uma string
+}; //console.log(testeF());
+
+
+var testeF2 = function testeF2() {
+  return [1, 2, 3];
+}; // retorna array
+//console.log(testeF2());
+
+
+var testeF3 = function testeF3() {
+  return 3;
+}; // retorna valor
+//console.log(testeF3());
+
+
+var testeF4 = function testeF4() {
+  return {
+    nome: 'Mauricio'
+  };
+}; // retorna objeto
+//console.log(testeF4());
 // OPERAÇÕES COM ARRAY
 
 
-var arr = [1, 3, 4, 5, 8, 10];
 var newArr = arr.map(function (item) {
   return item * 2;
 }); //console.log(newArr);
