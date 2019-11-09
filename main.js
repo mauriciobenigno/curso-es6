@@ -1,31 +1,20 @@
-// REST
-/* Serve para pegar o resto dos dados*/
-// para usar o resto basta colocar ...VARIAVEL
-// Exemplo 1
-const usuario = {
-    nome: 'Mauricio',
-    idade: 24,
-    empresa: 'BenignoDev'
+// SPREAD
+/** Consiste na passagem de informação de uma estrutura para outra */
+// Exemplo 1  - usando spread para concatenar os arrays
+const arr1 = [1,2,3];
+const arr2 = [4,5,6];
+
+const arr3 = [...arr1, ...arr2];
+//console.log(arr3);
+
+// Exemplo 2 - Consiste em copiar todas as informações de um objeto sobrepondo uma delas
+
+const usuario1 = {
+    nome:'Mauricio',
+    idade:24,
+    empresa:'BenignoDev',
 };
 
-const {nome, ...resto} = usuario;
+const usuario2 = { ...usuario1, nome:'Jose'}; // copia todo o conteúdo mas troca o nome
 
-//console.log(nome);
-//console.log(resto);
-
-// Exemplo 2
-const arr = [1,2,3,4];
-const [a, b, ...c] = arr;
-
-/*console.log(a);
-console.log(b);
-console.log(c);*/
-
-// Exemplo 3
-
-function soma(...parametros)
-{
-    return parametros.reduce((total, next) => total + next);
-}
-
-console.log(soma(1,2,2,4));
+console.log(usuario2);
