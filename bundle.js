@@ -1,31 +1,43 @@
 "use strict";
 
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+// REST
+
+/* Serve para pegar o resto dos dados*/
+// para usar o resto basta colocar ...VARIAVEL
+// Exemplo 1
 var usuario = {
   nome: 'Mauricio',
   idade: 24,
-  endereco: {
-    cidade: 'Goiania',
-    estado: 'GO'
+  empresa: 'BenignoDev'
+};
+
+var nome = usuario.nome,
+    resto = _objectWithoutProperties(usuario, ["nome"]); //console.log(nome);
+//console.log(resto);
+// Exemplo 2
+
+
+var arr = [1, 2, 3, 4];
+var a = arr[0],
+    b = arr[1],
+    c = arr.slice(2);
+/*console.log(a);
+console.log(b);
+console.log(c);*/
+// Exemplo 3
+
+function soma() {
+  for (var _len = arguments.length, parametros = new Array(_len), _key = 0; _key < _len; _key++) {
+    parametros[_key] = arguments[_key];
   }
-}; //console.log(usuario);
 
-/*const nome = usuario.nome;
-const idade = usuario.idade;
-const cidade = usuario.endereco.cidade;*/
-// Com o conceito de desestruturação posso recuperar varias informação de uma vez, exemplo abaixo:
-
-/*
-const {nome, idade, endereco:{cidade } } = usuario;
-console.log(nome);
-console.log(idade);
-console.log(cidade);*/
-
-function mostraNome(_ref) {
-  var nome = _ref.nome,
-      idade = _ref.idade;
-  console.log(nome, idade);
+  return parametros.reduce(function (total, next) {
+    return total + next;
+  });
 }
 
-mostraNome(usuario);
-/*Assim como foi feito com as variaveis nome, idade e cidade na linha 17, também é possivel fazer como
-parâmetro de função, como foi feito na linha 22*/
+console.log(soma(1, 2, 2, 4));

@@ -1,29 +1,31 @@
+// REST
+/* Serve para pegar o resto dos dados*/
+// para usar o resto basta colocar ...VARIAVEL
+// Exemplo 1
 const usuario = {
     nome: 'Mauricio',
     idade: 24,
-    endereco: {
-        cidade: 'Goiania',
-        estado: 'GO',
-    },
-}
+    empresa: 'BenignoDev'
+};
 
-//console.log(usuario);
+const {nome, ...resto} = usuario;
 
-/*const nome = usuario.nome;
-const idade = usuario.idade;
-const cidade = usuario.endereco.cidade;*/
-// Com o conceito de desestruturação posso recuperar varias informação de uma vez, exemplo abaixo:
-/*
-const {nome, idade, endereco:{cidade } } = usuario;
-console.log(nome);
-console.log(idade);
-console.log(cidade);*/
+//console.log(nome);
+//console.log(resto);
 
-function mostraNome({ nome, idade})
+// Exemplo 2
+const arr = [1,2,3,4];
+const [a, b, ...c] = arr;
+
+/*console.log(a);
+console.log(b);
+console.log(c);*/
+
+// Exemplo 3
+
+function soma(...parametros)
 {
-    console.log(nome, idade);
+    return parametros.reduce((total, next) => total + next);
 }
- mostraNome(usuario);
 
- /*Assim como foi feito com as variaveis nome, idade e cidade na linha 17, também é possivel fazer como
- parâmetro de função, como foi feito na linha 22*/
+console.log(soma(1,2,2,4));
