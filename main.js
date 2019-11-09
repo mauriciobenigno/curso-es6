@@ -1,14 +1,29 @@
-// Usando o método comum
-function soma(a=3,b=6)
-{
-    return a+b;
+const usuario = {
+    nome: 'Mauricio',
+    idade: 24,
+    endereco: {
+        cidade: 'Goiania',
+        estado: 'GO',
+    },
 }
-// usando Arrow function
-const soma2 = (a = 3, b = 6) => a + b ;
 
-//console.log(soma(1));
-//console.log(soma());
+//console.log(usuario);
 
-console.log(soma2(1));
-console.log(soma2());
+/*const nome = usuario.nome;
+const idade = usuario.idade;
+const cidade = usuario.endereco.cidade;*/
+// Com o conceito de desestruturação posso recuperar varias informação de uma vez, exemplo abaixo:
+/*
+const {nome, idade, endereco:{cidade } } = usuario;
+console.log(nome);
+console.log(idade);
+console.log(cidade);*/
 
+function mostraNome({ nome, idade})
+{
+    console.log(nome, idade);
+}
+ mostraNome(usuario);
+
+ /*Assim como foi feito com as variaveis nome, idade e cidade na linha 17, também é possivel fazer como
+ parâmetro de função, como foi feito na linha 22*/
