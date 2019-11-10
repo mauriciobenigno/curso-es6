@@ -1,7 +1,13 @@
 "use strict";
 
-// Template Literals
-var nome = "Maurício";
-var idade = 24; // é o uso de crase para simplicar a modelagem de strings com variaveis
-
-console.log("Meu nome \xE9 ".concat(nome, " e tenho ").concat(idade, " anos."));
+// Object Short Syntax
+// Sintaxe curta de objetos - ajuda a reutilizar variaveis, sem necessidade de ficar reatribuindo
+var nome = 'Mauricio';
+var idade = 24;
+var usuario = {
+  nome: nome,
+  // aplicado aqui
+  idade: idade,
+  // aplicado aqui
+  empresa: 'BenignoDev'
+};

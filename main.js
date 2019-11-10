@@ -1,5 +1,11 @@
-// Template Literals
-const nome = "Maurício";
+// Object Short Syntax
+// Sintaxe curta de objetos - ajuda a reutilizar variaveis, sem necessidade de ficar reatribuindo
+
+const nome = 'Mauricio';
 const idade = 24;
-// é o uso de crase para simplicar a modelagem de strings com variaveis
-console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
+
+const usuario = {
+    nome, // aplicado aqui
+    idade, // aplicado aqui
+    empresa: 'BenignoDev',
+};
