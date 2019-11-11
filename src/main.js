@@ -1,17 +1,15 @@
 import axios from 'axios';
 
-class Api {
-    static async getUserInfo(username)
-    {
-        try {
-            const response  = await axios.get(`https://api.github.com/users/${username}`);
-            console.log(response);
-        } catch (error) {
-            console.warn('Erro na API')
-        }
-        
-    }
+const delay = (segundo) => new Promise((resolve,reject) =>{
+    setTimeout(() => { resolve(segundo) }, 1000); 
+ });
+
+
+
+const umPorSegundo = async() => {
+    console.log(await delay('1s'));    
+    console.log(await delay('2s'));    
+    console.log(await delay('3s'));    
 }
 
-Api.getUserInfo('mauriciobenigno');
-Api.getUserInfo('mauriciobenignoxcxcxc');
+umPorSegundo();
