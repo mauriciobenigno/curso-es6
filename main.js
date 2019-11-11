@@ -1,11 +1,3 @@
-// Object Short Syntax
-// Sintaxe curta de objetos - ajuda a reutilizar variaveis, sem necessidade de ficar reatribuindo
+import { soma } from './funcoes';
 
-const nome = 'Mauricio';
-const idade = 24;
-
-const usuario = {
-    nome, // aplicado aqui
-    idade, // aplicado aqui
-    empresa: 'BenignoDev',
-};
+console.log(soma(1,2));
