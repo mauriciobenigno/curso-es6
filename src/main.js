@@ -1,1 +1,3 @@
-alert('Testando');
+import ClasseUsuario from './functions'
+
+ClasseUsuario.info();
