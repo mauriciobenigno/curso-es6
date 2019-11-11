@@ -86,27 +86,14 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./funcoes.js":
-/*!********************!*\
-  !*** ./funcoes.js ***!
-  \********************/
-/*! exports provided: soma, sub */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"soma\", function() { return soma; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sub\", function() { return sub; });\n// Para exportar uma função, deve se colocar o prefixo export\nfunction soma(a, b) {\n  return a + b;\n}\nfunction sub(a, b) {\n  return a - b;\n}\n\n//# sourceURL=webpack:///./funcoes.js?");
-
-/***/ }),
-
 /***/ "./main.js":
 /*!*****************!*\
   !*** ./main.js ***!
   \*****************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _funcoes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./funcoes */ \"./funcoes.js\");\n//import { sub } from './funcoes'; // Ao importar arquivos, a função deve manter o mesmo nome\n//import somaFun from './soma' // Ao importar arquivos com função default, pode se nomear da forma que quiser\n//para renomear uma função sem que ela seja default, deve se colocar 'NomeAnterior as NovoNome' no lugar do nome\n//para importar todas as funções. pode se usar o seguinte import abaixo\n\nconsole.log(_funcoes__WEBPACK_IMPORTED_MODULE_0__[\"soma\"](1, 2)); //console.log(soma(1,2));\n//console.log(somaFun(1,2));\n\n//# sourceURL=webpack:///./main.js?");
+eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nError: ENOENT: no such file or directory, open 'E:\\\\CURSOS\\\\JavaScript\\\\curso-es6\\\\main.js'\");\n\n//# sourceURL=webpack:///./main.js?");
 
 /***/ })
 
