@@ -1,8 +1,11 @@
+import api from './api';
+
 class App {
     constructor ()
     {
         this.repositorios = [];
         this.formEl = document.getElementById('repo-form');
+        this.inputEl = document.querySelector('input[name=repository]');
         this.listEl = document.getElementById('repo-list');
 
         this.registerHandlers();
@@ -13,17 +16,26 @@ class App {
         this.formEl.onsubmit = event => this.addRepositorio(event);
     }
 
-    addRepositorio()
+    async addRepositorio()
     {
         event.preventDefault();
 
-        this.repositorios.push({
-            name: 'ComparaHash',
-            description: 'App para comparação de hashs',
-            avatar_url: 'https://avatars0.githubusercontent.com/u/29067486?s=460&v=4',
-            html_url: 'https://github.com/mauriciobenigno/comparaHash'
-        });
+        const repoInput = this.inputEl.value;
 
+        if(repoInput.length === 0)
+            return;
+
+        const response = await api.get(`/repos/${repoInput}`);
+
+        const { name, description, html_url, owner: {avatar_url}} = response.data;
+
+        this.repositorios.push({
+            name,
+            description,
+            avatar_url,
+            html_url
+        });
+        this.inputEl.value='';
         this.render();
     }
 
@@ -43,6 +55,7 @@ class App {
 
             let linkEl = document.createElement('a');
             linkEl.setAttribute('target','_blank');
+            linkEl.setAttribute('href', repo.html_url);
             linkEl.appendChild(document.createTextNode('Acessar'));
 
             let listItemEl = document.createElement('li');
